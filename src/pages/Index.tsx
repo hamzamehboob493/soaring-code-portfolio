@@ -1,10 +1,13 @@
-
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import ContactForm from '../components/ContactForm';
 import { Button } from '@/components/ui/button';
+import { ChevronRight } from 'lucide-react';
+import PortfolioSlider from '@/components/PortfolioSlider';
+import TestimonialSlider from '@/components/TestimonialSlider';
+import StatisticsSection from '@/components/StatisticsSection';
 import { Card } from '@/components/ui/card';
-import { Code, Briefcase, Users, Mail, ChevronRight, ExternalLink } from 'lucide-react';
+import { Code, Briefcase, Users, Mail, ExternalLink } from 'lucide-react';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -86,21 +89,22 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Statistics Section */}
+      <StatisticsSection />
+
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-agency-blue">Our Portfolio</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {portfolioItems.map((item, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1">
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <a href={item.link} className="text-agency-blue hover:text-agency-sky flex items-center">
-                  View Project <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </Card>
-            ))}
-          </div>
+          <PortfolioSlider />
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 px-4 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-agency-blue">What Our Clients Say</h2>
+          <TestimonialSlider />
         </div>
       </section>
 
