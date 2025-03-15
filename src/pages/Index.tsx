@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
+import HeroSection from '../components/HeroSection';
 import ContactForm from '../components/ContactForm';
-import { Button } from '@/components/ui/button';
-import { ChevronRight } from 'lucide-react';
 import PortfolioSlider from '@/components/PortfolioSlider';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import StatisticsSection from '@/components/StatisticsSection';
 import { Card } from '@/components/ui/card';
-import { Code, Briefcase, Users, Mail, ExternalLink } from 'lucide-react';
+import { Code, Briefcase, Users } from 'lucide-react';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -53,26 +52,10 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-agency-gray">
+    <div className="min-h-screen bg-gradient-to-b from-agency-blue/5 to-agency-gray/10">
       <Navbar />
+      <HeroSection />
       
-      {/* Hero Section */}
-      <section id="home" className="pt-28 pb-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className={`space-y-6 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-            <h1 className="text-4xl md:text-6xl font-bold text-agency-blue">
-              Elevate Your Digital Presence
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We transform your ideas into powerful software solutions that drive growth and innovation.
-            </p>
-            <Button className="bg-agency-blue hover:bg-agency-blue/90 text-lg px-8 py-6">
-              Get Started <ChevronRight className="ml-2" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section id="services" className="py-20 px-4 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
